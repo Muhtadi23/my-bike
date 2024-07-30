@@ -1,0 +1,38 @@
+[
+    {
+        "_id": "1",
+        "image": "https://i.ibb.co/DYbg0tz/l-intro-1660230334.jpg",
+        "title": "Road Bike",
+        "description": "A high-performance road bike suitable for long-distance cycling and racing. Features lightweight frame and aerodynamic design."
+    },
+    {
+        "_id": "2",
+        "image": "https://i.ibb.co/DYbg0tz/l-intro-1660230334.jpg",
+        "title": "Mountain Bike",
+        "description": "Durable mountain bike built for off-road trails and rugged terrain. Equipped with suspension and sturdy tires."
+    },
+    {
+        "_id": "3",
+        "image": "https://i.ibb.co/DYbg0tz/l-intro-1660230334.jpg",
+        "title": "Hybrid Bike",
+        "description": "Versatile hybrid bike ideal for both city commuting and light trail riding. Combines features of road and mountain bikes."
+    },
+    {
+        "_id": "4",
+        "image": "https://i.ibb.co/DYbg0tz/l-intro-1660230334.jpg",
+        "title": "Cycling Helmet",
+        "description": "Safety-certified helmet designed to protect your head during cycling. Features adjustable fit and ventilation system."
+    },
+    {
+        "_id": "5",
+        "image": "https://i.ibb.co/DYbg0tz/l-intro-1660230334.jpg",
+        "title": "Cycling Gloves",
+        "description": "Comfortable and padded gloves to enhance grip and reduce hand fatigue. Available in various sizes and styles."
+    },
+    {
+        "_id": "6",
+        "image": "https://i.ibb.co/DYbg0tz/l-intro-1660230334.jpg",
+        "title": "Water Bottle",
+        "description": "BPA-free water bottle with a secure cap and easy-to-use nozzle. Keeps you hydrated during long rides."
+    }
+]
