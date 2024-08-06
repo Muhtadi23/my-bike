@@ -1,4 +1,4 @@
-import About from "./comp/About/About"
+
 import Blog from "./comp/Blog/Blog"
 import Carousel from "./comp/Carousel/Carousel"
 import Inspiration from "./comp/Inspiration/Inspiration"

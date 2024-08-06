@@ -18,6 +18,9 @@ import AuthProvider from './providers/AuthProvider.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 import AddBlog from './comp/Pages/AddBlog/AddBlog.jsx';
 import UpdateBlog from './comp/Pages/UpdateBlog/UpdateBlog.jsx';
+import AddProduct from './comp/Pages/AddProduct/AddProduct.jsx';
+import ManageItems from './comp/Pages/ManageItems/ManageItems.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -62,6 +65,15 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <Cart></Cart>
       },
+      {
+        path: "/addproduct",
+        element: <AddProduct></AddProduct>
+      },
+      {
+        path: "/manageitems",
+        element: <ManageItems></ManageItems>
+      },
+
 
     ]
   },
