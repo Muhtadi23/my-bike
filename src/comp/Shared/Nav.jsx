@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import useCarts from "../../hooks/useCarts";
+import { FaShop } from "react-icons/fa6";
+import { FaHome } from "react-icons/fa";
+import { TbTimelineEventMinus } from "react-icons/tb";
+import { PiBicycle } from "react-icons/pi";
 
 const Nav = () => {
 
@@ -22,9 +26,9 @@ const Nav = () => {
     }
 
     const navOptions = <>
-        <li> <Link to="/">Home</Link></li>
-        <li><Link to="/shop">Shop</Link></li>
-        <li><Link to='/social'>Social</Link></li>
+        <li> <Link to="/"><FaHome /> Home</Link></li>
+        <li><Link to="/shop"><FaShop /> Shop</Link></li>
+        <li><Link to='/social'><TbTimelineEventMinus /> Event</Link></li>
     </>
 
     return (
@@ -38,7 +42,7 @@ const Nav = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost text-xl">Premium Rush</Link>
+                <Link to="/" className="btn btn-ghost text-xl"><PiBicycle /> Premium Rush</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -59,7 +63,6 @@ const Nav = () => {
                                 <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow" style={{ zIndex: 1000 }}>
                                     <div className="card-body">
                                         <span className="font-bold text-lg">{cart.length} Items</span>
-                                        <span className="text-info">Subtotal: $999</span>
                                         <div className="card-actions">
                                             <Link to="/dashboard/cart"> <button className="btn btn-primary btn-block">View cart</button> </Link>
                                         </div>

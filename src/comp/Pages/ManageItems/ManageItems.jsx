@@ -37,6 +37,7 @@ const ManageItems = () => {
 
     return (
         <div className="overflow-x-auto p-2">
+            <h1 className="text-center text-5xl p-4">Manage Items</h1>
             <table className="table">
                 {/* head */}
                 <thead>

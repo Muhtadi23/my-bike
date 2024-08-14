@@ -1,14 +1,15 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../../hooks/useAdmin";
 
 
 const Dashboard = () => {
 
-    const isAdmin = true;
+    const [isAdmin] = useAdmin()
 
     return (
         <div className="flex">
             {/* dashboard sidebar */}
-            <div className="w-64 h-screen bg-emerald-500 p-4">
+            <div className="w-64 h-screen p-4">
                 <div>
                     <Link to="/" className="btn btn-ghost text-xl font-semibold">Premium Rush</Link>
                 </div>
@@ -18,6 +19,7 @@ const Dashboard = () => {
                             <li><NavLink to="/dashboard/adminProfile">Admin Profile</NavLink></li>
                             <li><NavLink to="/dashboard/manageItem">Manage Item</NavLink></li>
                             <li><NavLink to="/dashboard/addItem">Add Items</NavLink></li>
+                            <li><NavLink to="/dashboard/addBlog">Add Blogs</NavLink></li>
                             <li><NavLink to="/dashboard/allUsers">All Users</NavLink></li>
                             <li><NavLink to="/dashboard/adminHistory"> Admin History</NavLink></li>
                         </>

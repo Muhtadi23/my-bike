@@ -29,6 +29,7 @@ import Dashboard from './comp/Shared/Dashboard.jsx';
 import UserHistory from './comp/Pages/Dashboard/UserHistory/UserHistory.jsx';
 import User from './comp/Pages/Dashboard/User/User.jsx';
 import AllUsers from './comp/Pages/Dashboard/AllUsers/AllUsers.jsx';
+import AdminRoute from './PrivateRoute/AdminRoute.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -47,10 +48,6 @@ const router = createBrowserRouter([
       {
         path: "/social",
         element: <Social></Social>
-      },
-      {
-        path: "/addBlog",
-        element: <PrivateRoute><AddBlog></AddBlog></PrivateRoute>
       },
       {
         path: "/blogDetails/:id",
@@ -74,7 +71,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path: "user",
@@ -82,7 +79,7 @@ const router = createBrowserRouter([
       },
       {
         path: "cart",
-        element: <PrivateRoute><Cart></Cart></PrivateRoute>
+        element: <Cart></Cart>
       },
       {
         path: "history",
@@ -92,15 +89,19 @@ const router = createBrowserRouter([
       // admin route
       {
         path: "allUsers",
-        element: <PrivateRoute><AllUsers></AllUsers></PrivateRoute>
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
       },
       {
         path: "addItem",
-        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
+        element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
       },
       {
         path: "manageItem",
-        element: <PrivateRoute><ManageItems></ManageItems></PrivateRoute>
+        element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
+      },
+      {
+        path: "addBlog",
+        element: <AdminRoute><AddBlog></AddBlog></AdminRoute>
       },
     ]
   },

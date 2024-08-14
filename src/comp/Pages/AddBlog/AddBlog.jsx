@@ -39,7 +39,7 @@ const AddBlog = () => {
     return (
         <div>
             <h2 className="text-center text-5xl">Add Blog</h2>
-            <form onSubmit={handleAddBlog} className="bg-slate-100 card-body w-3/4 mx-auto">
+            <form onSubmit={handleAddBlog} className="card-body w-3/4 mx-auto">
                 <div className="form-control">
                     <input type="text" name="photo" placeholder="Image URL" className="input input-bordered" required />
                 </div>
@@ -50,7 +50,7 @@ const AddBlog = () => {
                     <input type="text" name="date" placeholder="Date" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
-                    <input className="textarea textarea-bordered " type="text" name="content" placeholder="Blog" required></input>
+                    <input className="textarea textarea-bordered h-24" type="text" name="content" placeholder="Blog" required></input>
                 </div>
 
                 <input className="btn bg-[#eb4034] text-white border-none" type="submit" value="Submit" />
