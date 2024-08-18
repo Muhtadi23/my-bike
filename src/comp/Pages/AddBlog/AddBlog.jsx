@@ -12,7 +12,7 @@ const AddBlog = () => {
         const date = form.date.value;
         const content = form.content.value;
         const newBlog = { title, url, date, content }
-        console.log(newBlog)
+        // console.log(newBlog)
 
         // send data to the server
         // post method on Client Side

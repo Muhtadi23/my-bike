@@ -3,13 +3,44 @@ import { MdDeleteOutline } from "react-icons/md";
 import Swal from "sweetalert2";
 import useBlog from "../../../../hooks/useBlog";
 import { Link } from "react-router-dom";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const ManageBlogs = () => {
 
-    const [blogs] = useBlog()
+    const [blogs, refetch] = useBlog()
+    const axiosSecure = useAxiosSecure()
+
+    // const handleDelete = _id => {
+    //     console.log(_id)
+    //     Swal.fire({
+    //         title: "Are you sure?",
+    //         text: "You won't be able to revert this!",
+    //         icon: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonColor: "#3085d6",
+    //         cancelButtonColor: "#d33",
+    //         confirmButtonText: "Yes, delete it!"
+    //     }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             fetch(`http://localhost:5002/blog/${_id}`, {
+    //                 method: 'DELETE'
+    //             })
+    //                 .then(res => res.json())
+    //                 .then(data => {
+    //                     console.log(data)
+    //                     if (data.deletedCount > 0) {
+    //                         Swal.fire({
+    //                             title: "Deleted!",
+    //                             text: "Blog has been deleted.",
+    //                             icon: "success"
+    //                         });
+    //                     }
+    //                 })
+    //         }
+    //     });
+    // }
 
     const handleDelete = _id => {
-        console.log(_id)
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -18,22 +49,16 @@ const ManageBlogs = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
+        }).then(async (result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5002/blog/${_id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                        if (data.deletedCount > 0) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Blog has been deleted.",
-                                icon: "success"
-                            });
-                        }
-                    })
+                const res = await axiosSecure.delete(`/blog/${_id}`)
+                if (res.data.deletedCount > 0) {
+                    refetch()
+                    Swal.fire({
+                        title: "Deleted!",
+                        icon: "success"
+                    });
+                }
             }
         });
     }
@@ -70,7 +95,7 @@ const ManageBlogs = () => {
                                 </div>
                             </td>
                             <td>
-                                <Link to={`/updateBlog/${item._id}`} className="btn btn-ghost btn-lg"><FaRegEdit />
+                                <Link to={`/dashboard/updateBlog/${item._id}`} className="btn btn-ghost btn-lg"><FaRegEdit />
                                 </Link>
                             </td>
                             <td>

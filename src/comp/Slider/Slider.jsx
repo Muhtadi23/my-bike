@@ -6,48 +6,52 @@ import slider5 from '../../assets/5.png'
 import slider6 from '../../assets/6.png'
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
 
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from 'swiper/modules'
 const Slider = () => {
     return (
         <div>
-                <Swiper
-                    slidesPerView={3}
-                    spaceBetween={30}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    modules={[Pagination]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <img
-                            src={slider1}
-                            alt="Burger" /></SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src={slider2}
-                            alt="Burger" /></SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src={slider3}
-                            alt="Burger" /></SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src={slider4}
-                            alt="Burger" /></SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src={slider5}
-                            alt="Burger" /></SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src={slider6}
-                            alt="Burger" /></SwiperSlide>
+            <Swiper
+                slidesPerView={3}
+                spaceBetween={0}
+                loop={true}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+            >
+                <SwiperSlide>
+                    <img
+                        src={slider1}
+                        alt="Burger" /></SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        src={slider2}
+                        alt="Burger" /></SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        src={slider3}
+                        alt="Burger" /></SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        src={slider4}
+                        alt="Burger" /></SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        src={slider5}
+                        alt="Burger" /></SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        src={slider6}
+                        alt="Burger" />
+                </SwiperSlide>
 
-                </Swiper>
+            </Swiper>
 
         </div>
     );

@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const UpdateBlog = () => {
 
     const blog = useLoaderData()
-    console.log(blog)
+    const axiosSecure = useAxiosSecure()
 
     const handleUpdateBlog = event => {
         event.preventDefault()
@@ -18,26 +19,19 @@ const UpdateBlog = () => {
 
         // send data to the server
         // post method on Client Side
-        fetch(`http://localhost:5002/blog/${blog._id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updatedBlog)
+        axiosSecure.put(`/blog/${blog._id}`, updatedBlog)
+        .then(res => {
+            console.log(res.data);
+            if (res.data.modifiedCount > 0) {
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Blog Updated Successfully",
+                    showConfirmButton: false,
+                    timer: 1200
+                });
+            }
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: "Blog Updated Successfully",
-                        showConfirmButton: false,
-                        timer: 1200
-                    });
-                }
-            })
     }
 
     return (

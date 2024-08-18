@@ -3,9 +3,10 @@ import { MdDeleteOutline } from "react-icons/md";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useProduct from "../../../hooks/useProduct";
+import { Link } from "react-router-dom";
 
 const ManageItems = () => {
-    
+
     const axiosSecure = useAxiosSecure()
     const [products, refetch] = useProduct()
 
@@ -69,8 +70,8 @@ const ManageItems = () => {
 
                             </td>
                             <td>
-                                <button className="btn btn-ghost btn-lg"><FaRegEdit />
-                                </button>
+                                <Link to={`/dashboard/updateItem/${item._id}`} className="btn btn-ghost btn-lg"><FaRegEdit />
+                                </Link>
                             </td>
                             <td>
                                 <button onClick={() => handledeleteItem(item)} className="btn btn-ghost btn-lg"><MdDeleteOutline />

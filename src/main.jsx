@@ -31,6 +31,8 @@ import User from './comp/Pages/Dashboard/User/User.jsx';
 import AllUsers from './comp/Pages/Dashboard/AllUsers/AllUsers.jsx';
 import AdminRoute from './PrivateRoute/AdminRoute.jsx';
 import ManageBlogs from './comp/Pages/Dashboard/ManageBlogs/ManageBlogs.jsx';
+import UpdateProduct from './comp/Pages/Dashboard/UpdateProduct/UpdateProduct.jsx';
+import AdminHome from './comp/Pages/Dashboard/AdminHome/AdminHome.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -53,11 +55,6 @@ const router = createBrowserRouter([
       {
         path: "/blogDetails/:id",
         element: <BlogDetails></BlogDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5002/blog/${params.id}`)
-      },
-      {
-        path: "/updateBlog/:id",
-        element: <UpdateBlog></UpdateBlog>,
         loader: ({ params }) => fetch(`http://localhost:5002/blog/${params.id}`)
       },
       {
@@ -89,6 +86,10 @@ const router = createBrowserRouter([
 
       // admin route
       {
+        path: "adminHome",
+        element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+      },
+      {
         path: "allUsers",
         element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
       },
@@ -101,12 +102,22 @@ const router = createBrowserRouter([
         element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
       },
       {
+        path: "updateItem/:id",
+        element: <AdminRoute><UpdateProduct></UpdateProduct></AdminRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5002/products/${params.id}`)
+      },
+      {
         path: "addBlog",
         element: <AdminRoute><AddBlog></AddBlog></AdminRoute>
       },
       {
         path: "manageBlogs",
         element: <AdminRoute><ManageBlogs></ManageBlogs></AdminRoute>
+      },
+      {
+        path: "updateBlog/:id",
+        element: <AdminRoute><UpdateBlog></UpdateBlog></AdminRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5002/blog/${params.id}`)
       },
     ]
   },
