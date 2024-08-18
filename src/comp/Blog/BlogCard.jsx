@@ -7,35 +7,35 @@ const BlogCard = ({ blog }) => {
     const { title, url, date, content, _id } = blog;
 
     // Delete Button Operation
-    const handleDelete = _id => {
-        console.log(_id)
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`http://localhost:5002/blog/${_id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                        if (data.deletedCount > 0) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Blog has been deleted.",
-                                icon: "success"
-                            });
-                        }
-                    })
-            }
-        });
-    }
+    // const handleDelete = _id => {
+    //     console.log(_id)
+    //     Swal.fire({
+    //         title: "Are you sure?",
+    //         text: "You won't be able to revert this!",
+    //         icon: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonColor: "#3085d6",
+    //         cancelButtonColor: "#d33",
+    //         confirmButtonText: "Yes, delete it!"
+    //     }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             fetch(`http://localhost:5002/blog/${_id}`, {
+    //                 method: 'DELETE'
+    //             })
+    //                 .then(res => res.json())
+    //                 .then(data => {
+    //                     console.log(data)
+    //                     if (data.deletedCount > 0) {
+    //                         Swal.fire({
+    //                             title: "Deleted!",
+    //                             text: "Blog has been deleted.",
+    //                             icon: "success"
+    //                         });
+    //                     }
+    //                 })
+    //         }
+    //     });
+    // }
     // *************************************
     return (
         <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md ">
@@ -60,18 +60,9 @@ const BlogCard = ({ blog }) => {
                 <p>
                     {content}
                     <Link to={`/blogDetails/${_id}`} >
-                        <span className="font-semibold"> Read more....</span>
+                        <span className="font-semibold underline"> Read more....</span>
                     </Link>
                 </p>
-            </div>
-
-            <div className="flex justify-end gap-2 p-2 pt-0">
-                <Link to={`/updateBlog/${_id}`} className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium tracking-wide text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">Edit</Link>
-
-                <button onClick={() => handleDelete(_id)} className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium tracking-wide text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">Delete</button>
-
-
-
             </div>
         </div>
     );

@@ -30,6 +30,7 @@ import UserHistory from './comp/Pages/Dashboard/UserHistory/UserHistory.jsx';
 import User from './comp/Pages/Dashboard/User/User.jsx';
 import AllUsers from './comp/Pages/Dashboard/AllUsers/AllUsers.jsx';
 import AdminRoute from './PrivateRoute/AdminRoute.jsx';
+import ManageBlogs from './comp/Pages/Dashboard/ManageBlogs/ManageBlogs.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -102,6 +103,10 @@ const router = createBrowserRouter([
       {
         path: "addBlog",
         element: <AdminRoute><AddBlog></AddBlog></AdminRoute>
+      },
+      {
+        path: "manageBlogs",
+        element: <AdminRoute><ManageBlogs></ManageBlogs></AdminRoute>
       },
     ]
   },

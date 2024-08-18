@@ -9,7 +9,7 @@ import { TbTimelineEventMinus } from "react-icons/tb";
 import { PiBicycle } from "react-icons/pi";
 
 const Nav = () => {
-
+    
     const { user, logOut } = useContext(AuthContext)
     const [cart] = useCarts()
     const handleLogOut = () => {

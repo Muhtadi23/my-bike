@@ -1,6 +1,8 @@
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const AddBlog = () => {
+    // const axiosPublic = useAxiosPublic()
 
     const handleAddBlog = event => {
         event.preventDefault()
