@@ -19,7 +19,6 @@ const UpdateProduct = () => {
 
         axiosSecure.put(`/products/${products._id}`, updateProduct)
             .then(res => {
-                console.log(res.data)
                 if (res.data.modifiedCount > 0) {
                     Swal.fire({
                         position: "center",

@@ -33,6 +33,7 @@ import AdminRoute from './PrivateRoute/AdminRoute.jsx';
 import ManageBlogs from './comp/Pages/Dashboard/ManageBlogs/ManageBlogs.jsx';
 import UpdateProduct from './comp/Pages/Dashboard/UpdateProduct/UpdateProduct.jsx';
 import AdminHome from './comp/Pages/Dashboard/AdminHome/AdminHome.jsx';
+import Payment from './comp/Pages/Dashboard/Payment/Payment.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: "history",
         element: <UserHistory></UserHistory>
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>
       },
 
       // admin route

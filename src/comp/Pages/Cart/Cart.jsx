@@ -2,10 +2,11 @@ import { MdDeleteOutline } from "react-icons/md";
 import useCarts from "../../../hooks/useCarts";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-    const [cart , refetch] = useCarts()
+    const [cart, refetch] = useCarts()
     const totalPrice = cart.reduce((total, item) => total + item.price, 0)
     const axiosSecure = useAxiosSecure()
 
@@ -43,7 +44,12 @@ const Cart = () => {
             <div className="flex justify-around font-medium text-3xl">
                 <h2>Total Order: {cart.length}</h2>
                 <h2>Total Price: {totalPrice}</h2>
-                <button className="btn bg-[#eb4034] text-white">Pay</button>
+                {cart.length ?
+                    <Link to="/dashboard/payment"><button className="btn bg-[#eb4034] text-white">Pay</button></Link>
+                    :
+                    <button disabled className="btn bg-[#eb4034] text-white">Pay</button>
+                }
+
             </div>
             <div>
                 <div className="overflow-x-auto">
@@ -78,7 +84,7 @@ const Cart = () => {
                                         </div>
                                     </td>
                                     <td>
-                                      ${item.price}
+                                        ${item.price}
                                     </td>
                                     <th>
                                         <button onClick={() => handledeleteItem(item._id)} className="btn btn-ghost btn-lg"><MdDeleteOutline />

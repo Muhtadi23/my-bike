@@ -7,11 +7,15 @@ import { FaShop } from "react-icons/fa6";
 import { FaHome } from "react-icons/fa";
 import { TbTimelineEventMinus } from "react-icons/tb";
 import { PiBicycle } from "react-icons/pi";
+import useAuth from "../../hooks/useAuth";
+// import useAdmin from "../../hooks/useAdmin";
 
 const Nav = () => {
-    
-    const { user, logOut } = useContext(AuthContext)
+
+    const { user, logOut } = useAuth()
+    // const [isAdmin] = useAdmin()
     const [cart] = useCarts()
+
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -64,7 +68,15 @@ const Nav = () => {
                                     <div className="card-body">
                                         <span className="font-bold text-lg">{cart.length} Items</span>
                                         <div className="card-actions">
-                                            <Link to="/dashboard/cart"> <button className="btn btn-primary btn-block">View cart</button> </Link>
+                                            {/* {
+                                                user && isAdmin && <><Link to="/dashboard/adminHome" className="btn btn-primary btn-block">View Dashboard </Link></>
+                                            }
+                                            {
+                                                user && !isAdmin && <><Link to="/dashboard/cart" className="btn btn-primary btn-block">View cart </Link></>
+                                            } */}
+                                            <Link to="/dashboard/cart" className="btn btn-primary btn-block">View cart </Link>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +93,6 @@ const Nav = () => {
                                         {user?.displayName}
 
                                     </li>
-                                    {/* <li><a>Settings</a></li> */}
                                     {
                                         user ? <li onClick={handleLogOut}><Link to="/">Logout</Link></li>
                                             :

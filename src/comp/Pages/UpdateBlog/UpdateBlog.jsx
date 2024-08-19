@@ -15,8 +15,6 @@ const UpdateBlog = () => {
         const date = form.date.value;
         const content = form.content.value;
         const updatedBlog = { title, url, date, content }
-        console.log(updatedBlog)
-
         // send data to the server
         // post method on Client Side
         axiosSecure.put(`/blog/${blog._id}`, updatedBlog)
