@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import useCarts from "../../hooks/useCarts";
 import { FaShop } from "react-icons/fa6";
@@ -75,8 +73,6 @@ const Nav = () => {
                                                 user && !isAdmin && <><Link to="/dashboard/cart" className="btn btn-primary btn-block">View cart </Link></>
                                             } */}
                                             <Link to="/dashboard/cart" className="btn btn-primary btn-block">View cart </Link>
-
-
                                         </div>
                                     </div>
                                 </div>

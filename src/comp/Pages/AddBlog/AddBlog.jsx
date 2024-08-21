@@ -49,7 +49,7 @@ const AddBlog = () => {
                     <input type="text" name="title" placeholder="Title" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
-                    <input type="text" name="date" placeholder="Date" className="input input-bordered" required />
+                    <input type="date" name="date" placeholder="Date" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <input className="textarea textarea-bordered h-24" type="text" name="content" placeholder="Blog" required></input>

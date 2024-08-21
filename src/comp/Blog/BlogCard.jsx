@@ -58,7 +58,7 @@ const BlogCard = ({ blog }) => {
                     </div>
                 </header>
                 <p>
-                    {content}
+                    {content.slice(0, 300)}
                     <Link to={`/blogDetails/${_id}`} >
                         <span className="font-semibold underline"> Read more....</span>
                     </Link>

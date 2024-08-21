@@ -46,7 +46,7 @@ const UpdateBlog = () => {
                     <input type="text" defaultValue={blog.date} name="date" placeholder="Date" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
-                    <input className="textarea textarea-bordered " type="text" defaultValue={blog.content} name="content" placeholder="Blog" required></input>
+                    <input className="textarea textarea-bordered h-24" type="text" defaultValue={blog.content} name="content" placeholder="Blog" required></input>
                 </div>
 
                 <input className="btn bg-[#eb4034] text-white border-none" type="submit" value="Submit" />
