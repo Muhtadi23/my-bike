@@ -1,10 +1,12 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../hooks/useAdmin";
+import useCarts from "../../hooks/useCarts";
 
 
 const Dashboard = () => {
 
     const [isAdmin] = useAdmin()
+    const [cart] = useCarts()
 
     return (
         <div className="flex">
@@ -28,9 +30,9 @@ const Dashboard = () => {
                             :
                             <>
                                 <li><NavLink to="/dashboard/user">User Profile</NavLink></li>
-                                <li><NavLink to="/dashboard/cart">My Cart</NavLink></li>
+                                <li><NavLink to="/dashboard/cart">My Cart ({cart.length})</NavLink></li>
                                 <li><NavLink to="/shop">Shop</NavLink></li>
-                                <li><NavLink to="/dashboard/history">History</NavLink></li>
+                                <li><NavLink to="/dashboard/history">Payment History</NavLink></li>
                             </>
                     }
 
