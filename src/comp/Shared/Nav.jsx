@@ -6,12 +6,13 @@ import { FaHome } from "react-icons/fa";
 import { TbTimelineEventMinus } from "react-icons/tb";
 import { PiBicycle } from "react-icons/pi";
 import useAuth from "../../hooks/useAuth";
-// import useAdmin from "../../hooks/useAdmin";
+import useAdmin from "../../hooks/useAdmin";
+import ava from "../../assets/ava.jpg"
 
 const Nav = () => {
 
     const { user, logOut } = useAuth()
-    // const [isAdmin] = useAdmin()
+    const [isAdmin] = useAdmin()
     const [cart] = useCarts()
 
     const handleLogOut = () => {
@@ -66,13 +67,13 @@ const Nav = () => {
                                     <div className="card-body">
                                         <span className="font-bold text-lg">{cart.length} Items</span>
                                         <div className="card-actions">
-                                            {/* {
+                                            {
                                                 user && isAdmin && <><Link to="/dashboard/adminHome" className="btn btn-primary btn-block">View Dashboard </Link></>
                                             }
                                             {
                                                 user && !isAdmin && <><Link to="/dashboard/cart" className="btn btn-primary btn-block">View cart </Link></>
-                                            } */}
-                                            <Link to="/dashboard/cart" className="btn btn-primary btn-block">View cart </Link>
+                                            }
+                                            {/* <Link to="/dashboard/cart" className="btn btn-primary btn-block">View cart </Link> */}
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +81,14 @@ const Nav = () => {
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
-                                        <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                                        {
+                                            user ? <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+
+                                                :
+
+                                                <img alt="Tailwind CSS Navbar component" src={ava} />
+                                        }
+
                                     </div>
                                 </div>
                                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52" style={{ zIndex: 1000 }}>

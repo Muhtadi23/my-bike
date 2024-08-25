@@ -11,7 +11,7 @@ const Dashboard = () => {
     return (
         <div className="flex">
             {/* dashboard sidebar */}
-            <div className="w-64 h-screen p-4">
+            <div className="lg:max-w-64 h-screen p-4">
                 <div>
                     <Link to="/" className="btn btn-ghost text-xl font-semibold">Premium Rush</Link>
                 </div>

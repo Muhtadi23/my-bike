@@ -21,7 +21,7 @@ const UserHistory = () => {
             <div>
                 <h2 className="text-3xl">Total Payments: {payments.length}</h2>
                 <div className="overflow-x-auto">
-                    <table className="table table-zebra">
+                    <table className="table w-full">
                         {/* head */}
                         <thead>
                             <tr>
