@@ -38,33 +38,58 @@ const BlogCard = ({ blog }) => {
     // }
     // *************************************
     return (
-        <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md ">
+        // <div className="overflow-hidden rounded bg-white shadow-md ">
 
-            <figure>
-                <img
-                    src={url}
-                    alt="card image"
-                    className="aspect-video w-full"
-                />
-            </figure>
+        //     <figure>
+        //         <img
+        //             src={url}
+        //             alt="card image"
+        //             className="aspect-video w-full"
+        //         />
+        //     </figure>
 
-            <div className="p-6">
-                <header className="mb-4 flex gap-4">
-                    <div>
-                        <h3 className="text-xl font-medium text-slate-700">
-                            {title}
-                        </h3>
-                        <p className="text-sm text-slate-400">{date}</p>
+        //     <div className="p-6">
+        //         <header className="mb-4 flex gap-4">
+        //             <div>
+        //                 <h3 className="text-xl font-medium ">
+        //                     {title}
+        //                 </h3>
+        //                 <p className="text-sm">{date}</p>
+        //             </div>
+        //         </header>
+        //         <p>
+        //             {content.slice(0, 300)}
+        //             <Link to={`/blogDetails/${_id}`} >
+        //                 <span className="font-semibold underline"> Read more....</span>
+        //             </Link>
+        //         </p>
+        //     </div>
+        // </div>
+        <div>
+            <Link to={`/blogDetails/${_id}`} >
+                <article className="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+                    <img
+                        alt=""
+                        src={url}
+                        className="absolute inset-0 h-full w-full object-cover"
+                    />
+
+                    <div className="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-32 sm:pt-48 lg:pt-64">
+                        <div className="p-4 sm:p-6">
+                            <time className="block text-xs text-white/90"> {date} </time>
+
+                            <a href="#">
+                                <h3 className="mt-0.5 text-lg text-white">{title}</h3>
+                            </a>
+
+                            <p className="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
+                                {content.slice(0, 200)}
+                            </p>
+                        </div>
                     </div>
-                </header>
-                <p>
-                    {content.slice(0, 300)}
-                    <Link to={`/blogDetails/${_id}`} >
-                        <span className="font-semibold underline"> Read more....</span>
-                    </Link>
-                </p>
-            </div>
-        </div>
+                </article>
+            </Link>
+        </div >
     );
 };
 

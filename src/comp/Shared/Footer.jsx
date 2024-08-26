@@ -6,7 +6,7 @@ const Footer = () => {
         <div>
             <footer className="footer footer-center text-base-content rounded p-10">
                 <nav >
-                    <Link to="/" className="btn btn-ghost text-xl">Premium Rush</Link>
+                    <Link to="/" className="btn btn-ghost font-semibold text-xl">Premium Rush</Link>
                 </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4">
@@ -52,7 +52,7 @@ const Footer = () => {
                     <a className="link link-hover">Press kit</a>
                 </nav>
                 <aside>
-                    <p>Copyright © ${new Date().getFullYear()} - All right reserved by Miran Ltd</p>
+                    <p>Copyright © ${new Date().getFullYear()} - All right reserved by Miran Muhtadi</p>
                 </aside>
             </footer>
         </div>
