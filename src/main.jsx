@@ -34,12 +34,14 @@ import ManageBlogs from './comp/Pages/Dashboard/ManageBlogs/ManageBlogs.jsx';
 import UpdateProduct from './comp/Pages/Dashboard/UpdateProduct/UpdateProduct.jsx';
 import AdminHome from './comp/Pages/Dashboard/AdminHome/AdminHome.jsx';
 import Payment from './comp/Pages/Dashboard/Payment/Payment.jsx';
+import Error from './comp/Pages/Error/Error.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",

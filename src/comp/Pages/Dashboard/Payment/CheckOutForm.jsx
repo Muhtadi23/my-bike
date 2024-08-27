@@ -17,7 +17,7 @@ const CheckOutForm = () => {
     const { user } = useAuth()
     const navigate = useNavigate()
 
-    const totalPrice = cart.reduce((total, item) => total + item.price, 0)
+    const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0)
 
     useEffect(() => {
         if (totalPrice > 0) {
@@ -85,15 +85,15 @@ const CheckOutForm = () => {
                 const res = await axiosSecure.post('/payments', payment)
                 console.log('payment saved', res)
                 refetch()
-                if(res.data?.paymentResult?.insertedId){
+                if (res.data?.paymentResult?.insertedId) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
                         title: "Your Payment was Successful",
                         showConfirmButton: false,
                         timer: 2000
-                      });
-                      navigate('/dashboard/history')
+                    });
+                    navigate('/dashboard/history')
                 }
             }
         }

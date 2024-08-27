@@ -17,6 +17,48 @@ const ProductCard = ({ item }) => {
     const location = useLocation()
     const axiosSecure = useAxiosSecure()
 
+    // const handleAddToCart = () => {
+    //     if (user && user.email) {
+    //         const cartItem = {
+    //             productId: _id,
+    //             email: user.email,
+    //             title,
+    //             image,
+    //             price,
+    //               quantity: 1
+    //         }
+    //         axiosSecure.post('/carts', cartItem)
+    //             .then(res => {
+    //                 if (res.data.insertedId) {
+    //                     Swal.fire({
+    //                         position: "top-end",
+    //                         icon: "success",
+    //                         title: `${title} Added to the Cart`,
+    //                         showConfirmButton: false,
+    //                         timer: 1000
+    //                     });
+    //                     refetch()
+    //                 }
+    //             })
+    //     }
+    //     else {
+    //         Swal.fire({
+    //             title: "You are not Logged In",
+    //             text: "Please Login to add to the cart",
+    //             icon: "warning",
+    //             showCancelButton: true,
+    //             confirmButtonColor: "#3085d6",
+    //             cancelButtonColor: "#d33",
+    //             confirmButtonText: "Yes, Login"
+    //         }).then((result) => {
+    //             if (result.isConfirmed) {
+    //                 // send the user to the login page
+    //                 navigate('/login', { state: { from: location } })
+    //             }
+    //         });
+    //     }
+    // }
+
     const handleAddToCart = () => {
         if (user && user.email) {
             const cartItem = {
@@ -24,23 +66,22 @@ const ProductCard = ({ item }) => {
                 email: user.email,
                 title,
                 image,
-                price
-            }
+                price,
+                quantity: 1 // Initially adding one item to the cart
+            };
+
             axiosSecure.post('/carts', cartItem)
                 .then(res => {
-                    if (res.data.insertedId) {
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: `${title} Added to the Cart`,
-                            showConfirmButton: false,
-                            timer: 1000
-                        });
-                        refetch()
-                    }
-                })
-        }
-        else {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${title} added to the cart`,
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+                    refetch();
+                });
+        } else {
             Swal.fire({
                 title: "You are not Logged In",
                 text: "Please Login to add to the cart",
@@ -51,12 +92,13 @@ const ProductCard = ({ item }) => {
                 confirmButtonText: "Yes, Login"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // send the user to the login page
-                    navigate('/login', { state: { from: location } })
+                    navigate('/login', { state: { from: location } });
                 }
             });
         }
-    }
+    };
+
+
 
     return (
         <div>

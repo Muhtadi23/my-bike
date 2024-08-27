@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Cart = () => {
 
     const [cart, refetch] = useCarts()
-    const totalPrice = cart.reduce((total, item) => total + item.price, 0)
+    const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0)
     const axiosSecure = useAxiosSecure()
 
     const handledeleteItem = id => {
@@ -37,6 +37,20 @@ const Cart = () => {
         });
     }
 
+    // const handleQuantityChange = (productId, newQuantity) => {
+    //     axiosSecure.patch(`/carts/${cart._id}`, { quantity: newQuantity })
+    //         .then(res => {
+    //             if (res.data.modifiedCount > 0) {
+    //                 // Optionally update the cart state or item quantity directly
+    //                 updateCartItem(productId, newQuantity);
+    //                 refetch(); // Refetch the cart data to sync the UI
+    //             }
+    //         })
+    //         .catch(error => {
+    //             console.error('Error updating quantity:', error);
+    //             // Optionally, you could update the state to show an error message or highlight the error
+    //         });
+    // }
 
     return (
         <div>
@@ -61,8 +75,9 @@ const Cart = () => {
                                     #
                                 </th>
                                 <th>Product</th>
+                                <th>Quantity</th>
                                 <th>$ Price</th>
-                                <th></th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -70,12 +85,12 @@ const Cart = () => {
                                 cart.map((item, index) => <tr key={item._id} >
                                     <td>{index + 1}</td>
                                     <td>
-                                        <div className="flex items-center gap-3">
+                                        <div className="flex items-center gap-2">
                                             <div className="avatar">
                                                 <div className="mask mask-squircle h-12 w-12">
                                                     <img
                                                         src={item.image}
-                                                        alt="Avatar Tailwind CSS Component" />
+                                                    />
                                                 </div>
                                             </div>
                                             <div>
@@ -84,7 +99,10 @@ const Cart = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        ${item.price}
+                                        {item.quantity}
+                                    </td>
+                                    <td>
+                                        ${item.price * item.quantity}
                                     </td>
                                     <th>
                                         <button onClick={() => handledeleteItem(item._id)} className="btn btn-ghost btn-lg"><MdDeleteOutline />
