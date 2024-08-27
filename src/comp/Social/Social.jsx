@@ -49,10 +49,18 @@ const Social = () => {
                             <th><button className="btn btn-ghost">Register</button></th>
                         </tr>
                         <tr>
-                            <td>4</td>
+                            <td>5</td>
                             <td>New York City Marathon</td>
                             <td>November 3, 2024</td>
                             <td>New York, NY, USA
+                            </td>
+                            <th><button className="btn btn-ghost">Register</button></th>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Rad Race</td>
+                            <td>November 3, 2024</td>
+                            <td>Germany
                             </td>
                             <th><button className="btn btn-ghost">Register</button></th>
                         </tr>

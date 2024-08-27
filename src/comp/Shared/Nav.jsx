@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useCarts from "../../hooks/useCarts";
-import { FaShop } from "react-icons/fa6";
+import { FaRegImages, FaShop } from "react-icons/fa6";
 import { FaHome } from "react-icons/fa";
 import { TbTimelineEventMinus } from "react-icons/tb";
 import { PiBicycle } from "react-icons/pi";
@@ -31,6 +31,7 @@ const Nav = () => {
     const navOptions = <>
         <li> <Link to="/"><FaHome /> Home</Link></li>
         <li><Link to="/shop"><FaShop /> Shop</Link></li>
+        <li><Link to="/gallary"><FaRegImages /> Gallary</Link></li>
         <li><Link to='/social'><TbTimelineEventMinus /> Event</Link></li>
     </>
 

@@ -35,6 +35,7 @@ import UpdateProduct from './comp/Pages/Dashboard/UpdateProduct/UpdateProduct.js
 import AdminHome from './comp/Pages/Dashboard/AdminHome/AdminHome.jsx';
 import Payment from './comp/Pages/Dashboard/Payment/Payment.jsx';
 import Error from './comp/Pages/Error/Error.jsx';
+import Galary from './comp/Pages/Galary/Galary.jsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <ShopLanding></ShopLanding>
+      },
+      {
+        path: "/gallary",
+        element: <Galary></Galary>
       },
       {
         path: "/social",
