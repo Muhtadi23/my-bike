@@ -10,6 +10,9 @@ import img9 from '../../../assets/galary/9.jpg'
 import img10 from '../../../assets/galary/10.jpg'
 import img11 from '../../../assets/galary/11.jpg'
 import img12 from '../../../assets/galary/12.jpg'
+import img13 from '../../../assets/galary/13.jpg'
+import img14 from '../../../assets/galary/14.jpg'
+import img15 from '../../../assets/galary/15.jpg'
 
 const Galary = () => {
     return (
@@ -32,6 +35,10 @@ const Galary = () => {
                     <img className="w-[full] rounded" src={img9} alt="" />
                     <img className="w-[full] rounded" src={img10} alt="" />
                     <img className="w-[full] rounded" src={img6} alt="" />
+
+                    <img className="w-[full] rounded" src={img13} alt="" />
+                    <img className="w-[full] rounded" src={img15} alt="" />
+                    <img className="w-[full] rounded" src={img14} alt="" />
                 </div>
             </div>
         </div>
