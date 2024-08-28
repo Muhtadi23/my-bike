@@ -7,6 +7,9 @@ import img6 from '../../../assets/galary/6.jpg'
 import img7 from '../../../assets/galary/7.jpg'
 import img8 from '../../../assets/galary/8.jpg'
 import img9 from '../../../assets/galary/9.jpg'
+import img10 from '../../../assets/galary/10.jpg'
+import img11 from '../../../assets/galary/11.jpg'
+import img12 from '../../../assets/galary/12.jpg'
 
 const Galary = () => {
     return (
@@ -15,7 +18,7 @@ const Galary = () => {
 
                 <div className="w-fit grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
                     <img className="w-[full] rounded" src={img8} alt="" />
-                    <img className="w-[full] rounded" src={img7} alt="" />
+                    <img className="w-[full] rounded" src={img11} alt="" />
                     <img className="w-[full] rounded" src={img5} alt="" />
 
                     <img className="w-[full] rounded" src={img3} alt="" />
@@ -23,8 +26,12 @@ const Galary = () => {
                     <img className="w-[full] rounded" src={img2} alt="" />
 
                     <img className="w-[full] rounded" src={img4} alt="" />
-                    <img className="w-[full] rounded" src={img6} alt="" />
+                    <img className="w-[full] rounded" src={img12} alt="" />
+                    <img className="w-[full] rounded" src={img7} alt="" />
+
                     <img className="w-[full] rounded" src={img9} alt="" />
+                    <img className="w-[full] rounded" src={img10} alt="" />
+                    <img className="w-[full] rounded" src={img6} alt="" />
                 </div>
             </div>
         </div>
