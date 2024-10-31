@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       {
         path: "/blogDetails/:id",
         element: <BlogDetails></BlogDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5002/blog/${params.id}`)
+        loader: ({ params }) => fetch(`https://my-bike-server.vercel.app/blog/${params.id}`)
       },
       {
         path: "/login",
@@ -116,7 +116,7 @@ const router = createBrowserRouter([
       {
         path: "updateItem/:id",
         element: <AdminRoute><UpdateProduct></UpdateProduct></AdminRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5002/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://my-bike-server.vercel.app/products/${params.id}`)
       },
       {
         path: "addBlog",
@@ -129,7 +129,7 @@ const router = createBrowserRouter([
       {
         path: "updateBlog/:id",
         element: <AdminRoute><UpdateBlog></UpdateBlog></AdminRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5002/blog/${params.id}`)
+        loader: ({ params }) => fetch(`https://my-bike-server.vercel.app/blog/${params.id}`)
       },
     ]
   },
@@ -139,7 +139,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <div className='mx-auto max-w-[1920px] font-chakra'>
+        <div className='mx-auto max-w-[1920px] font-chakra '>
           <RouterProvider router={router} />
         </div>
       </AuthProvider>

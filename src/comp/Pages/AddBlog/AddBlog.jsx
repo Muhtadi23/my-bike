@@ -16,7 +16,7 @@ const AddBlog = () => {
 
         // send data to the server
         // post method on Client Side
-        fetch('http://localhost:5002/blog', {
+        fetch('https://my-bike-server.vercel.app/blog', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

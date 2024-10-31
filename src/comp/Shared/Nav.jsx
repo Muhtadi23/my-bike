@@ -8,6 +8,7 @@ import { PiBicycle } from "react-icons/pi";
 import useAuth from "../../hooks/useAuth";
 import useAdmin from "../../hooks/useAdmin";
 import ava from "../../assets/ava.jpg"
+import main_logo from '../../assets/galary/main-logo.png'
 
 const Nav = () => {
 
@@ -46,7 +47,7 @@ const Nav = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost text-xl"><PiBicycle /> Premium Rush</Link>
+                <Link to="/"><img className="lg:w-[30%] md:w-[60%]" src={main_logo} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

@@ -7,7 +7,7 @@ const useBlog = () => {
     const axiosPublic = useAxiosPublic()
     // const [blogs, setBlogs] = useState([])
     // useEffect(() => {
-    //     fetch('http://localhost:5002/blog')
+    //     fetch('https://my-bike-server.vercel.app/blog')
     //         .then(res => res.json())
     //         .then(data => {
     //             setBlogs(data)

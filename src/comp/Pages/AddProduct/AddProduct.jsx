@@ -10,7 +10,7 @@ const AddProduct = () => {
         const image = form.image.value;
         const newProduct = { title, image, price }
 
-        fetch('http://localhost:5002/products', {
+        fetch('https://my-bike-server.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

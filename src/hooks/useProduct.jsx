@@ -7,7 +7,7 @@ const useProduct = () => {
     const axiosPublic = useAxiosPublic()
     // const [products, setProducts] = useState([])
     // useEffect(() => {
-    //     fetch('http://localhost:5002/products')
+    //     fetch('https://my-bike-server.vercel.app/products')
     //         .then(res => res.json())
     //         .then(data => {
     //             setProducts(data)

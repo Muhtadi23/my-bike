@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5002'
+    baseURL: 'https://my-bike-server.vercel.app'
 })
 
 const useAxiosSecure = () => {
@@ -40,7 +40,7 @@ export default useAxiosSecure;
 // import useAuth from "./useAuth";
 
 // const axiosSecure = axios.create({
-//     baseURL: 'http://localhost:5002'
+//     baseURL: 'https://my-bike-server.vercel.app'
 // });
 
 // const useAxiosSecure = () => {
